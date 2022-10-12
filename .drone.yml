@@ -6,5 +6,5 @@ steps:
 - name: hello
   image: alpine
   commands:
-  - echo hello world
+  - echo bonjour monde
 
