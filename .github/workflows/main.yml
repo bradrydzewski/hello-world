@@ -19,7 +19,5 @@ jobs:
         version: [10, 12, 14]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v3
-        with:
-        - name: my-step-version-${{ matrix.version }}
-          run: echo ${{ matrix.version }}
+      - name: my-step-version-${{ matrix.version }}
+        run: echo ${{ matrix.version }}
