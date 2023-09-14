@@ -2,12 +2,24 @@
 on:
   push
 
+# jobs:
+#   my-job:
+#     runs-on: ubuntu-latest
+#     container: alpine
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: actions/setup-node@v2
+#       - name: my-step
+#         run: which npm
+
 jobs:
-  my-job:
+  example_matrix:
+    strategy:
+      matrix:
+        version: [10, 12, 14]
     runs-on: ubuntu-latest
-    container: alpine
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-      - name: my-step
-        run: which npm
+      - uses: actions/setup-node@v3
+        with:
+        - name: my-step-version-${{ matrix.version }}
+          run: echo ${{ matrix.version }}
