@@ -19,6 +19,6 @@ jobs:
         version: [10, 12, 14]
     runs-on: ubuntu-latest
     steps:
-      - id: my-step-version-${{ matrix.version }}
+      - id: my-step-version-1
         name: my-step-version-${{ matrix.version }}
-        run: echo ${{ matrix.version }}
+        run: echo ${{ matrix.version }}; env
