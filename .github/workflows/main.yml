@@ -13,13 +13,27 @@ on:
 #       - name: my-step
 #         run: which npm
 
+# jobs:
+#   example_matrix:
+#     strategy:
+#       matrix:
+#         version: [10, 12, 14]
+#     runs-on: ubuntu-latest
+#     steps:
+#       - id: my-step-version-1
+#         name: my-step-version-${{ matrix.version }}
+#         run: echo ${{ matrix.version }}; env
+
 jobs:
-  example_matrix:
-    strategy:
-      matrix:
-        version: [10, 12, 14]
+  foo:
     runs-on: ubuntu-latest
     steps:
       - id: my-step-version-1
-        name: my-step-version-${{ matrix.version }}
-        run: echo ${{ matrix.version }}; env
+        name: foo
+        run: echo hello
+  bar:
+    runs-on: ubuntu-latest
+    steps:
+      - id: my-step-version-1
+        name: bar
+        run: echo world
